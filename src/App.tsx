@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { renderScramblePage } from './lib/render';
-import { CANONICAL_KEYWORDS } from './lib/themes';
+import { PRIMARY_KEYWORDS } from './lib/themes';
 import {
   exportBookPdf,
   exportBookZip,
@@ -134,9 +134,9 @@ export default function App() {
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           >
-            {CANONICAL_KEYWORDS.map((k) => (
-              <option key={k} value={k}>
-                {k}
+            {PRIMARY_KEYWORDS.map(({ label, key }) => (
+              <option key={key} value={key}>
+                {label}
               </option>
             ))}
           </select>
